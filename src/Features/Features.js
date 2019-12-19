@@ -2,6 +2,13 @@ import React, {Component} from 'react';
 import slugify from 'slugify';
 
 class Features extends Component {
+    updateFeature = (feature, newValue) => {
+        //const selected = Object.assign({}, this.state.selected);
+        selected[feature] = newValue;
+        this.setState({
+          selected
+        });
+      };
     render() {
         const USCurrencyFormat = new Intl.NumberFormat('en-US', {
             style: 'currency',
