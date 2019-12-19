@@ -2,6 +2,12 @@ import React, {Component} from 'react';
 
 class Summary extends Component{
     render() {
+
+        const USCurrencyFormat = new Intl.NumberFormat('en-US', {
+            style: 'currency',
+            currency: 'USD'
+          });
+
         const summary = Object.keys(this.props.selected).map((feature, idx) => {
             const featureHash = feature + '-' + idx;
             const selectedOption = this.props.selected[feature];
@@ -16,8 +22,8 @@ class Summary extends Component{
               </div>
             );
           });
-    }
-    
+          return summary;
+    } 
 }
 
 export default Summary;

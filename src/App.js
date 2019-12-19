@@ -8,6 +8,7 @@ import './App.css';
 import Header from './Header/Header';
 //import SummaryList from './SummaryList/SummaryList';
 import Summary from './Summary/Summary';
+import Features from './Features/Features';
 
 // This object will allow us to
 // easily convert numbers into US dollar values
@@ -50,6 +51,7 @@ class App extends Component {
   };
 
   render() {
+  /*
     const features = Object.keys(this.props.features).map((feature, idx) => {
       const featureHash = feature + '-' + idx;
       const options = this.props.features[feature].map(item => {
@@ -80,7 +82,7 @@ class App extends Component {
         </fieldset>
       );
     });
-    
+  */
     /*
     const summary = Object.keys(this.state.selected).map((feature, idx) => {
       const featureHash = feature + '-' + idx;
@@ -108,7 +110,9 @@ class App extends Component {
         <main>
           <form className="main__form">
             <h2>Customize your laptop</h2>
-            {features}
+            <Features
+            
+             />
           </form>
           <section className="main__summary">
             <h2>Your cart</h2>
