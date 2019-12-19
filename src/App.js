@@ -6,7 +6,8 @@ import slugify from 'slugify';
 
 import './App.css';
 import Header from './Header/Header';
-import SummaryList from './SummaryList/SummaryList';
+//import SummaryList from './SummaryList/SummaryList';
+import Summary from './Summary/Summary';
 
 // This object will allow us to
 // easily convert numbers into US dollar values
@@ -80,7 +81,7 @@ class App extends Component {
       );
     });
     
-    
+    /*
     const summary = Object.keys(this.state.selected).map((feature, idx) => {
       const featureHash = feature + '-' + idx;
       const selectedOption = this.state.selected[feature];
@@ -95,7 +96,7 @@ class App extends Component {
         </div>
       );
     });
-
+    */
     const total = Object.keys(this.state.selected).reduce(
       (acc, curr) => acc + this.state.selected[curr].cost,
       0
@@ -111,7 +112,9 @@ class App extends Component {
           </form>
           <section className="main__summary">
             <h2>Your cart</h2>
-            {summary}
+            <Summary 
+            selected = {this.state.selected}
+            />
             <div className="summary__total">
               <div className="summary__total__label">Total</div>
               <div className="summary__total__value">
