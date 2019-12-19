@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 // Normalizes string as a slug - a string that is safe to use
 // in both URLs and html attributes
-import slugify from 'slugify';
+//import slugify from 'slugify';
 
 import './App.css';
 import Header from './Header/Header';
@@ -41,7 +41,7 @@ class App extends Component {
       }
     }
   }
-
+/*
   updateFeature = (feature, newValue) => {
     const selected = Object.assign({}, this.state.selected);
     selected[feature] = newValue;
@@ -49,7 +49,7 @@ class App extends Component {
       selected
     });
   };
-
+*/
   render() {
   /*
     const features = Object.keys(this.props.features).map((feature, idx) => {
@@ -110,9 +110,13 @@ class App extends Component {
         <main>
           <form className="main__form">
             <h2>Customize your laptop</h2>
-            <Features
-            
-             />
+            {console.log(this.props.features)}
+            {console.log(this.state.selected)}
+            {console.log(this.state)}
+            <Features 
+            features = {this.props.features}
+            selected = {this.state.selected}
+            />
           </form>
           <section className="main__summary">
             <h2>Your cart</h2>

@@ -18,7 +18,7 @@ class Features extends Component {
                     id={itemHash}
                     className="feature__option"
                     name={slugify(feature)}
-                    checked={item.name === this.state.selected[feature].name}
+                    checked={item.name === this.props.selected[feature].name}
                     onChange={e => this.updateFeature(feature, item)}
                   />
                   <label htmlFor={itemHash} className="feature__label">
@@ -27,7 +27,6 @@ class Features extends Component {
                 </div>
               );
             });
-      
             return (
               <fieldset className="feature" key={featureHash}>
                 <legend className="feature__name">
