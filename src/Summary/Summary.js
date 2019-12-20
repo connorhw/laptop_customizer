@@ -7,8 +7,10 @@ class Summary extends Component{
         const summary = Object.keys(this.props.selected).map((feature, idx) => {
             const featureHash = feature + '-' + idx;
             const selectedOption = this.props.selected[feature];
+            const index = idx;
             return (            
                 <SummaryOptions 
+                 key = {index}
                  feature = {feature}
                  featureHash = {featureHash}
                  selectedOption = {selectedOption}
