@@ -13,11 +13,13 @@ import SummaryTotal from './SummaryTotal/SummaryTotal';
 
 // This object will allow us to
 // easily convert numbers into US dollar values
+
+/*
 const USCurrencyFormat = new Intl.NumberFormat('en-US', {
   style: 'currency',
   currency: 'USD'
 });
-
+*/
 class App extends Component {
   constructor(props) {
     super(props);
@@ -111,24 +113,16 @@ class App extends Component {
         <main>
           <form className="main__form">
             <h2>Customize your laptop</h2>
-            {console.log(this.props.features)}
-            {console.log(this.state.selected)}
-            {console.log(this.state)}
             <Features 
             features = {this.props.features}
             selected = {this.state.selected}
             updateFeatureFunc = {this.updateFeature}
-
             />
           </form>
           <section className="main__summary">
             <h2>Your cart</h2>
-            <Summary 
-             selected = {this.state.selected}
-            />
-            <SummaryTotal 
-             total = {total}
-            />
+            <Summary selected = {this.state.selected}/>
+            <SummaryTotal total = {total}/>
           </section>
         </main>
       </div>
