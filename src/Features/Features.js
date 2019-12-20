@@ -2,13 +2,6 @@ import React, {Component} from 'react';
 import slugify from 'slugify';
 
 class Features extends Component {
-    updateFeature = (feature, newValue) => {
-        const selected = Object.assign({}, this.props.selected);
-        this.props.selected[feature] = newValue;
-        this.setState({
-          selected
-        });
-      };
     render() {
         const USCurrencyFormat = new Intl.NumberFormat('en-US', {
             style: 'currency',
@@ -26,7 +19,7 @@ class Features extends Component {
                     className="feature__option"
                     name={slugify(feature)}
                     checked={item.name === this.props.selected[feature].name}
-                    onChange={e => this.updateFeature(feature, item)}
+                    onChange={e => this.props.updateFeatureFunc(feature, item)}
                   />
                   <label htmlFor={itemHash} className="feature__label">
                     {item.name} ({USCurrencyFormat.format(item.cost)})

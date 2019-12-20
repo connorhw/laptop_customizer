@@ -41,7 +41,7 @@ class App extends Component {
       }
     }
   }
-/*
+  
   updateFeature = (feature, newValue) => {
     const selected = Object.assign({}, this.state.selected);
     selected[feature] = newValue;
@@ -49,7 +49,7 @@ class App extends Component {
       selected
     });
   };
-*/
+
   render() {
   /*
     const features = Object.keys(this.props.features).map((feature, idx) => {
@@ -116,6 +116,8 @@ class App extends Component {
             <Features 
             features = {this.props.features}
             selected = {this.state.selected}
+            updateFeatureFunc = {this.updateFeature}
+
             />
           </form>
           <section className="main__summary">
