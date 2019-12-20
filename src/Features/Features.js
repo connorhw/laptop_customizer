@@ -3,8 +3,8 @@ import slugify from 'slugify';
 
 class Features extends Component {
     updateFeature = (feature, newValue) => {
-        //const selected = Object.assign({}, this.state.selected);
-        selected[feature] = newValue;
+        const selected = Object.assign({}, this.props.selected);
+        this.props.selected[feature] = newValue;
         this.setState({
           selected
         });
