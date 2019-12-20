@@ -9,6 +9,7 @@ import Header from './Header/Header';
 //import SummaryList from './SummaryList/SummaryList';
 import Summary from './Summary/Summary';
 import Features from './Features/Features';
+import SummaryTotal from './SummaryTotal/SummaryTotal';
 
 // This object will allow us to
 // easily convert numbers into US dollar values
@@ -123,14 +124,11 @@ class App extends Component {
           <section className="main__summary">
             <h2>Your cart</h2>
             <Summary 
-            selected = {this.state.selected}
+             selected = {this.state.selected}
             />
-            <div className="summary__total">
-              <div className="summary__total__label">Total</div>
-              <div className="summary__total__value">
-                {USCurrencyFormat.format(total)}
-              </div>
-            </div>
+            <SummaryTotal 
+             total = {total}
+            />
           </section>
         </main>
       </div>
